@@ -1,12 +1,101 @@
-@import url("");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "";
+  font-family: "Ubuntu";
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ul {
   list-style-type: none;
+}
+
+body {
+  background-color: #0E0E0E;
+  color: white;
+}
+
+#Header {
+  margin: auto;
+  width: 95%;
+  padding: 150px 0 50px 0;
+}
+#Header .contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Header .contenedor .box {
+  margin: 0 50px;
+}
+#Header .contenedor .text-box {
+  width: 600px;
+}
+#Header .contenedor .text-box .text {
+  padding: 10px 0;
+}
+#Header .contenedor .text-box .tabs span {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+#Header .contenedor .tech-box {
+  width: 800px;
+}
+#Header .contenedor .tech-box .title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#Header .contenedor .tech-box .techs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#Header .contenedor .tech-box .techs .logo {
+  margin: 10px;
+  width: 60px;
+  background-color: #fff;
+  padding: 20px 80px;
+  border-radius: 10px;
+  box-sizing: content-box;
+}
+#Header .contenedor .tech-box .techs .logo img {
+  width: 60px;
+  min-width: 60px;
+  display: block;
+  margin: auto;
+}
+
+.html {
+  background-color: #ff6625 !important;
+}
+
+.css {
+  background-color: #1aa7e4 !important;
+}
+
+.js {
+  background-color: #a8930c !important;
+}
+
+.react {
+  background-color: #d8f6ff !important;
+}
+
+.git {
+  background-color: #8f1d0c !important;
+}
+
+.figma {
+  background-color: #292827 !important;
+}
+
+.bootstrap {
+  background-color: #cdbfe4 !important;
+}
+
+.tailwind {
+  background-color: #007987 !important;
 }/*# sourceMappingURL=style.css.map */
