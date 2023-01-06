@@ -18,7 +18,7 @@ for (let i = 0; i < 3; i++) {
 
 
 const typingEffect = new Typed('#textType',{
-    strings : ["my Space","my WebPage","my World","my Journey"],
+    strings : ["my Space","my WebPage","my Portfolio","my Journey"],
     loop : true,
     typeSpeed: 100,
     backSpeed: 80,

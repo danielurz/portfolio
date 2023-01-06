@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Coda+Caption&family=Lobster&family=Ubuntu:wght@400;700&display=swap");
+@font-face {
+  font-family: "Minecraft";
+  src: url("fonts/MinecraftEvenings.otf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -16,26 +20,28 @@ body {
   color: white;
 }
 
+main {
+  margin: auto;
+  width: 90%;
+}
+
 #Header {
   font-size: 18px;
   padding: 200px 0 50px 0;
 }
 #Header .contenedor {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-#Header .contenedor .box {
-  margin: 0 50px;
-}
 #Header .contenedor .text-box {
-  width: 600px;
+  width: 700px;
 }
 #Header .contenedor .text-box .text {
   padding: 10px 0;
 }
 #Header .contenedor .text-box .tabs {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 #Header .contenedor .text-box .tabs span {
   display: inline-block;
@@ -73,7 +79,7 @@ body {
   width: 60px;
   background-color: #fff;
   padding: 25px 90px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-sizing: content-box;
 }
 #Header .contenedor .tech-box .techs .logo img {
@@ -126,6 +132,122 @@ body {
 }
 .activo::before {
   background: linear-gradient(90deg, #E04143, #AA3F79) !important;
+}
+
+#Projects {
+  margin-top: 100px;
+}
+#Projects .title {
+  margin-bottom: 50px;
+}
+#Projects .title span {
+  font-size: 1.3em;
+  display: block;
+}
+#Projects .title span i {
+  font-size: 1.3em;
+  margin-right: 2px;
+}
+#Projects .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1600px;
+  margin: auto;
+  gap: 20px;
+}
+#Projects .contenedor .box {
+  width: 300px;
+  background-color: #171717;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#Projects .contenedor .box .header {
+  height: 180px;
+}
+#Projects .contenedor .box .header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+#Projects .contenedor .box .body {
+  padding: 20px;
+}
+#Projects .contenedor .box .title {
+  margin-bottom: 20px !important;
+}
+
+#Social {
+  margin-top: 150px;
+}
+#Social .contenedor {
+  gap: 20px;
+  display: flex;
+}
+#Social .contenedor .title {
+  width: 50%;
+  height: 100px;
+  text-align: center;
+  background: linear-gradient(to right, #0C4364, #1C3A9E);
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+#Social .contenedor .title p {
+  font-size: 2.5em;
+  font-family: "Lobster";
+  letter-spacing: 3px;
+  align-self: center;
+}
+#Social .contenedor .redes {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  gap: 20px;
+}
+#Social .contenedor .redes > a {
+  border-radius: 10px;
+  font-size: 3em;
+  width: 25%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: white;
+}
+#Social .contenedor .redes .github {
+  background-color: #49228C;
+}
+#Social .contenedor .redes .linkedin {
+  background-color: #0961B8;
+}
+#Social .contenedor .redes .reddit {
+  background-color: #F24100;
+}
+
+#Contacto {
+  margin-top: 150px;
+  height: 600px;
+  background: #8A42F2;
+  border-radius: 10px;
+}
+#Contacto .contenedor {
+  display: flex;
+  height: 100%;
+}
+#Contacto .contenedor .title {
+  width: 50%;
+  display: grid;
+  place-items: center;
+}
+#Contacto .contenedor .title p {
+  font-family: "Maincraft";
+  font-size: 5em;
+}
+
+#Footer {
+  height: 150px;
+  background-color: #171717;
+  margin-top: 150px;
 }
 
 .html {
