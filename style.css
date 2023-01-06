@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coda+Caption&family=Lobster&family=Ubuntu:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -17,9 +17,8 @@ body {
 }
 
 #Header {
-  margin: auto;
-  width: 95%;
-  padding: 150px 0 50px 0;
+  font-size: 18px;
+  padding: 200px 0 50px 0;
 }
 #Header .contenedor {
   display: flex;
@@ -35,14 +34,30 @@ body {
 #Header .contenedor .text-box .text {
   padding: 10px 0;
 }
+#Header .contenedor .text-box .tabs {
+  margin-top: 20px;
+}
 #Header .contenedor .text-box .tabs span {
   display: inline-block;
-  padding: 5px;
-  margin: 0 5px;
+  padding: 7.5px 5px;
+  margin: 0 10px;
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.5294117647);
+  font-weight: bold;
+  position: relative;
+  font-size: 1.2em;
+}
+#Header .contenedor .text-box .tabs span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5294117647);
 }
 #Header .contenedor .tech-box {
-  width: 800px;
+  width: 900px;
 }
 #Header .contenedor .tech-box .title {
   text-align: center;
@@ -57,7 +72,7 @@ body {
   margin: 10px;
   width: 60px;
   background-color: #fff;
-  padding: 20px 80px;
+  padding: 25px 90px;
   border-radius: 10px;
   box-sizing: content-box;
 }
@@ -66,6 +81,51 @@ body {
   min-width: 60px;
   display: block;
   margin: auto;
+}
+#Header .anim-text {
+  background: linear-gradient(90deg, #E04143, #AA3F79);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+#Header .domain {
+  font-size: 2.5em !important;
+  border-bottom: 2px solid 90deg, #E04143, #AA3F79;
+  font-family: "Coda Caption", sans-serif !important;
+  font-weight: 900;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.5333333333) 500%);
+  line-height: 0.95em;
+  outline: none;
+}
+#Header .typetext {
+  font-size: 1.3em;
+  padding: 5px 0;
+  margin-top: 40px;
+}
+#Header .tech-title {
+  font-size: 2em;
+  font-family: "Lobster";
+}
+
+#CV a {
+  display: inline-block;
+  text-decoration: none;
+  color: #7373e7;
+  font-weight: bold;
+  padding: 5px 20px;
+  border: 2px solid #7373e7;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.activo {
+  background: linear-gradient(90deg, #E04143, #AA3F79) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: bold !important;
+}
+.activo::before {
+  background: linear-gradient(90deg, #E04143, #AA3F79) !important;
 }
 
 .html {
