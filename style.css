@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Coda+Caption&family=Lobster&family=Ubuntu:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coda+Caption&family=Comfortaa&family=Lobster&family=Ubuntu:wght@400;700&display=swap");
 @font-face {
   font-family: "Minecraft";
   src: url("fonts/MinecraftEvenings.otf");
@@ -32,13 +32,15 @@ main {
 #Header .contenedor {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  line-height: 1.5em;
 }
 #Header .contenedor .text-box {
   width: 700px;
 }
 #Header .contenedor .text-box .text {
   padding: 10px 0;
+  font-size: 1.1em;
 }
 #Header .contenedor .text-box .tabs {
   margin-top: 30px;
@@ -76,17 +78,27 @@ main {
 }
 #Header .contenedor .tech-box .techs .logo {
   margin: 10px;
-  width: 60px;
+  width: 220px;
+  height: 80px;
   background-color: #fff;
-  padding: 25px 90px;
+  padding: 10px;
   border-radius: 5px;
   box-sizing: content-box;
+  transition: all 0.3s;
+  display: grid;
+  place-items: center;
+  position: relative;
 }
 #Header .contenedor .tech-box .techs .logo img {
   width: 60px;
   min-width: 60px;
   display: block;
   margin: auto;
+}
+#Header .contenedor .tech-box .techs .logo:hover {
+  transform: translateY(-3px);
+  position: relative;
+  z-index: 1;
 }
 #Header .anim-text {
   background: linear-gradient(90deg, #E04143, #AA3F79);
@@ -159,12 +171,14 @@ main {
   width: 300px;
   background-color: #171717;
   border-radius: 10px;
-  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
 }
 #Projects .contenedor .box .header {
   height: 180px;
 }
 #Projects .contenedor .box .header img {
+  border-radius: 10px 10px 0 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -175,6 +189,13 @@ main {
 }
 #Projects .contenedor .box .title {
   margin-bottom: 20px !important;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#Projects .contenedor .box:hover {
+  transform: translateY(-4px);
+  position: relative;
+  z-index: 1;
 }
 
 #Social {
@@ -213,6 +234,10 @@ main {
   place-items: center;
   text-decoration: none;
   color: white;
+  transition: all 0.3s;
+}
+#Social .contenedor .redes > a:hover {
+  transform: translateY(-5px);
 }
 #Social .contenedor .redes .github {
   background-color: #49228C;
@@ -241,13 +266,94 @@ main {
 }
 #Contacto .contenedor .title p {
   font-family: "Maincraft";
-  font-size: 5em;
 }
 
 #Footer {
   height: 150px;
   background-color: #171717;
   margin-top: 150px;
+}
+
+/* ---------- CLASES PARA LOS HOVER ---------- */
+.hover-logo {
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 400px;
+  background-color: #171717;
+  border-radius: 10px;
+  color: white;
+  padding: 0 20px;
+  z-index: 10 !important;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.hover-logo .img-div {
+  padding: 30px 0;
+}
+.hover-logo .img-div img {
+  width: 100px !important;
+}
+.hover-logo .body .titlee {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.hover-logo .body .prem {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.hover-logo .body ul {
+  list-style-type: circle;
+  margin-left: 30px;
+}
+
+.hover-project {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 400px;
+  background-color: #171717;
+  border-radius: 10px;
+  color: white;
+  padding: 0 20px;
+  z-index: 10 !important;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.hover-project .cabezera .titleee {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 60px 0 30px 0;
+  font-size: 1.5em !important;
+}
+.hover-project .tabss {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.hover-project .tabss span {
+  display: inline-block;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5294117647);
+  font-size: 1.2em;
+  position: relative;
+  padding: 7px 0;
+  cursor: pointer;
+}
+.hover-project .tabss span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5294117647);
 }
 
 .html {
