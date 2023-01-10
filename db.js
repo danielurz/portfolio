@@ -145,8 +145,175 @@ function bodyMessage(logo) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+function bodyContent(project) {
+    if(project.classList.contains('expenses')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('cripto')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('vet')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('recipes')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('imgapi')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('loans')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('weather')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('insurance')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+    if(project.classList.contains('portfolio')) {
+        return (`
+            <div class="desc">
+                <p>This is the description of the project This is the description
+                of the project This is the description of the project This is the 
+                description of the project This is the description of the project 
+                This is the description of the project</p>
+            </div>
+            <div class="inst">
+                <p>This are the instructions of the project This are the
+                instructions of the project  This are the instructions of the 
+                project This are the instructions of the project This are the 
+                instructions of the project</p>
+            </div>
+        `
+        )
+    }
+}
+
 export {
-    bodyMessage
+    bodyMessage,
+    bodyContent
 }
 
 

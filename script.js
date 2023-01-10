@@ -30,10 +30,10 @@ for (let i = 0; i < 3; i++) {
 
 
 
+import { bodyMessage, bodyContent } from "./db.js"
 
 
 const logos = document.querySelectorAll('#Header .techs .logo')
-import { bodyMessage } from "./db.js"
 
 let array = [];
 
@@ -100,7 +100,7 @@ function hoverProject(project) {
     if(arrayP.length === 0) {
         const element = document.createElement('div')
         const title = project.querySelector('.title')
-
+        
         element.classList.add('hover-project')
         
         element.innerHTML = `
@@ -111,16 +111,43 @@ function hoverProject(project) {
             <span>Description</span>
             <span>Instructions</span>
         </div>
-        `
+        <div class="content">
+            ${bodyContent(project)}
+        </div>
+        <div class="links">
 
+        </div>
+        `
+            
+            
+        const tabs = element.querySelectorAll('.tabss span')
+        const content = element.querySelectorAll('.content div')
+        tabs[0].classList.add('activo')
+        
+        for (let i = 0; i < 2; i++) {
+            tabs[i].addEventListener('click',function(){
+
+                if(i === 0 && !this.classList.contains('activo')) {
+                    content.forEach(box => box.style.transform = "translateX(0)")
+                } else if (i === 1 && !this.classList.contains('activo')) {
+                    content.forEach(box => box.style.transform = "translateX(-100%)")
+                }
+
+                tabs.forEach(tab => tab.classList.remove('activo'))
+                this.classList.add('activo')
+            })
+        }        
+        
+        
         arrayP.push(element)    
+        
         
         let timeout = setTimeout(() => {
             project.appendChild(element)
             setTimeout(() => {
                 element.style.opacity = "1"  
                 element.style.width = "400px"  
-                element.style.height = "550px"  
+                element.style.height = "500px"  
             }, 500);
         }, 500);
         
@@ -135,3 +162,6 @@ function hoverProject(project) {
 projects.forEach(project => {
     project.addEventListener('mouseenter',() => hoverProject(project))
 })
+
+
+

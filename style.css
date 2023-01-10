@@ -289,6 +289,7 @@ main {
   z-index: 10 !important;
   opacity: 0;
   transition: all 0.3s;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 .hover-logo .img-div {
   padding: 30px 0;
@@ -316,8 +317,8 @@ main {
   top: -10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   background-color: #171717;
   border-radius: 10px;
   color: white;
@@ -325,6 +326,7 @@ main {
   z-index: 10 !important;
   opacity: 0;
   transition: all 0.3s;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 .hover-project .cabezera .titleee {
   text-transform: uppercase;
@@ -355,7 +357,23 @@ main {
   height: 4px;
   background: rgba(255, 255, 255, 0.5294117647);
 }
+.hover-project .content {
+  padding: 30px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  height: 250px;
+}
+.hover-project .content > div {
+  transition: transform 0.3s ease;
+  min-width: 100%;
+  margin: 0 5px;
+}
+.hover-project .content > div p {
+  user-select: none;
+}
 
+/* --------------- TECH COLORS --------------- */
 .html {
   background-color: #ff6625 !important;
 }
