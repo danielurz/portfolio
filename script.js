@@ -100,6 +100,7 @@ function hoverProject(project) {
     if(arrayP.length === 0) {
         const element = document.createElement('div')
         const title = project.querySelector('.title')
+        const {texto,git,link} = bodyContent(project)
         
         element.classList.add('hover-project')
         
@@ -112,10 +113,15 @@ function hoverProject(project) {
             <span>Instructions</span>
         </div>
         <div class="content">
-            ${bodyContent(project)}
+            ${texto}
         </div>
         <div class="links">
-
+            <a href="${link}" target="_blank" class="link">
+                <span><i class="fa-solid fa-link"></i></span>
+            </a>
+            <a href="${git}" target="_blank" class="git">
+                <span><i class="fa-brands fa-github"></i></span>
+            </a>
         </div>
         `
             
@@ -129,7 +135,8 @@ function hoverProject(project) {
 
                 if(i === 0 && !this.classList.contains('activo')) {
                     content.forEach(box => box.style.transform = "translateX(0)")
-                } else if (i === 1 && !this.classList.contains('activo')) {
+                } 
+                else if (i === 1 && !this.classList.contains('activo')) {
                     content.forEach(box => box.style.transform = "translateX(-100%)")
                 }
 
@@ -138,16 +145,14 @@ function hoverProject(project) {
             })
         }        
         
-        
         arrayP.push(element)    
-        
         
         let timeout = setTimeout(() => {
             project.appendChild(element)
             setTimeout(() => {
                 element.style.opacity = "1"  
                 element.style.width = "400px"  
-                element.style.height = "500px"  
+                element.style.height = "450px"  
             }, 500);
         }, 500);
         

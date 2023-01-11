@@ -157,7 +157,7 @@ function bodyMessage(logo) {
 
 function bodyContent(project) {
     if(project.classList.contains('expenses')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -171,10 +171,15 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+        
+        const link = "https://danielurz.github.io/expenses-check/"
+        const git = "https://github.com/danielurz/expenses-check"
+
+        return {texto,git,link}
+        
     }
     if(project.classList.contains('cripto')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -188,10 +193,14 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "https://danielurz.github.io/criptos/"
+        const git = "https://github.com/danielurz/criptos"
+
+        return {texto,git,link}
     }
     if(project.classList.contains('vet')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -205,10 +214,14 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "https://danielurz.github.io/vet-patients/"
+        const git = "https://github.com/danielurz/vet-patients"
+
+        return {texto,git,link}
     }
     if(project.classList.contains('recipes')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -222,10 +235,14 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "https://danielurz.github.io/food-recipes/"
+        const git = "https://github.com/danielurz/food-recipes"
+
+        return {texto,git,link}
     }
     if(project.classList.contains('imgapi')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -239,10 +256,14 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "https://danielurz.github.io/pixabay-images/"
+        const git = "https://github.com/danielurz/pixabay-images"
+
+        return {texto,git,link}
     }
     if(project.classList.contains('loans')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -256,10 +277,14 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "https://danielurz.github.io/loan-fees/"
+        const git = "https://github.com/danielurz/loan-fees"
+
+        return {texto,git,link}
     }
     if(project.classList.contains('weather')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -273,10 +298,14 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "https://danielurz.github.io/weatherapp/"
+        const git = "https://github.com/danielurz/weatherapp"
+
+        return {texto,git,link}
     }
     if(project.classList.contains('insurance')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -290,10 +319,14 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "https://danielurz.github.io/car-insurance-rates/"
+        const git = "https://github.com/danielurz/car-insurance-rates"
+
+        return {texto,git,link}
     }
     if(project.classList.contains('portfolio')) {
-        return (`
+        const texto = `
             <div class="desc">
                 <p>This is the description of the project This is the description
                 of the project This is the description of the project This is the 
@@ -307,7 +340,11 @@ function bodyContent(project) {
                 instructions of the project</p>
             </div>
         `
-        )
+
+        const link = "#"
+        const git = "https://github.com/danielurz/expenses-check"
+
+        return {texto,git,link}
     }
 }
 
