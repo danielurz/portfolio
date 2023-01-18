@@ -1,0 +1,327 @@
+@media (max-width:1600px) {
+    #Header {
+        .tech-box {
+            width: 750px !important;
+            min-width: 750px !important;
+            .logo {
+                width: 180px !important;
+                img {
+                    width: 50px !important;
+                    min-width: 50px !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width:1400px) {
+    #Contacto {
+        .contenedor {
+            .svg {
+                img {
+                    width: 550px;
+                }
+            }
+            .form-box {
+                #Form {
+                    margin: auto;
+                    width: 80%;
+                }
+            }
+        }
+    }
+    #Header {
+        .tech-box {
+            width: 600px !important;
+            min-width: 600px !important;
+            .logo {
+                width: 130px !important;
+                height: 110px !important; 
+                img {
+                    width: 50px !important;
+                    min-width: 50px !important;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:1200px) {
+    #Contacto {
+        .contenedor {
+            .svg {
+                img {
+                    width: 450px;
+                }
+            }
+            .form-box {
+                #Form {
+                    margin: auto;
+                    width: 80%;
+                }
+            }
+        }
+    }
+    #Header {
+        .tech-box {
+            width: 450px !important;
+            min-width: 450px !important;
+            .logo {
+                width: 90px !important;
+                height: 90px !important; 
+                img {
+                    width: 40px !important;
+                    min-width: 40px !important;
+                }
+            }
+        }
+    }
+}
+  
+
+@media (max-width:1024px) {
+    #Social {
+        .contenedor {
+            flex-wrap: wrap;
+            .title {
+                height: 70px;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .redes {
+                width: 100%;
+                align-items: flex-start;
+                & > a {
+                    height: 100px;
+                }
+            }
+        }
+    }
+    #Contacto {
+        width: 600px;
+        height: auto;
+        .contenedor {
+            .svg {
+                display: none;
+            }
+            .form-box {
+                width: 100%;
+                #Form {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    #Header {
+        padding: 150px 0 50px 0;
+        .contenedor {
+            .domain {
+                text-align: center;
+            }
+            flex-wrap: wrap;
+            .box {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+            .text-box {
+                .texts {
+                    padding: 10px 0;
+                    font-size: 1.1em;
+                    .text {
+                        height: auto;
+                    }
+                }
+            }
+            .tech-box {
+                margin-top: 80px;
+                .techs {
+                    justify-content: center;
+                    .logo {
+                        width: 25% !important;
+                        cursor: pointer;
+                        &:hover {
+                            transform: translate(0);
+                        } 
+                        img {
+                            width: 60px !important;
+                            min-width: 60px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .hover-logo-s {
+        display: block;
+    }
+
+    #Projects {
+        .contenedor {
+            gap: 30px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .click-project {
+        display: block;
+    }
+    #Projects {
+        .contenedor {
+            .box {
+                cursor: pointer;
+                &:hover {
+                    transform: translate(0);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:700px) {
+    #Contacto {
+        width: 100%;
+    }
+    #Projects {
+        .contenedor {
+            grid-template-columns: repeat(auto-fill,80%);
+            justify-content: center;
+            gap: 0;
+            grid-row-gap: 50px;
+            .box {
+                width: 80%;
+                min-width: 300px;
+                margin: auto;
+            }
+        }
+    }
+}
+
+
+@media (max-width:560px) {
+    #Header {
+        .contenedor {
+            .domain {
+                font-size: 2.5em !important;
+            }
+            .tech-box {
+                margin-top: 80px;
+                .techs {
+                    // justify-content: flex-start;
+                    .logo {
+                        width: 100% !important;
+                        margin: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+    .hover-logo-s {
+        .box-logo {
+            width: 90% !important;
+            ul {
+                margin: 20px 0 0 20px !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+@media (max-width:460px) {
+    #Social {
+        .contenedor {
+            .title {
+                padding: 10px 0;
+                height: auto;
+                p {
+                    font-size: 2em;
+                    padding: 0 5px;
+                }
+            }
+            .redes {
+                & > a {
+                    height: 80px;
+                    font-size: 2.5em;
+                }
+            }
+        }
+    }
+    #Form {
+        padding: 60px 10px !important;
+    }
+    .click-project {
+        .project-box {
+            width: 90% !important;
+            padding: 0 15px;
+        }
+    }
+    #Header {
+        .contenedor {
+            .domain {
+                font-size: 2em !important;
+            }
+        }
+    }
+}
+
+@media (max-width:410px) {
+    .click-project {
+        .project-box {
+            .links {
+                gap: 15px;
+                a {
+                    padding: 5px 50px;
+                }
+            }
+        }
+    }
+    #Header {
+        .contenedor {
+            .domain {
+                font-size: 1.8em !important;
+            }
+            .tech-box {
+                margin-top: 80px;
+                .techs {
+                    .logo {
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
+    #Projects {
+        .contenedor {
+            grid-template-columns: repeat(auto-fill,100%);
+            min-width: none !important;
+            
+            .box {
+                width: 100% !important;
+                min-width: none !important;
+            }
+        }
+    }
+}
+
+
+
+
+.mqlogo1400 {
+    top: 50% !important;
+    left: 57% !important;
+    transform: translate(-50%,-50%) !important;
+}
+
+.mqlogo1024 {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%) !important;
+    position: fixed;
+}

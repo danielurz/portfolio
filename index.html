@@ -4,7 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/mq.css">
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -13,64 +14,62 @@
 	</head>
 	<body>
 		<main>
+
+
+
 			<div id="Header">
 				<div class="contenedor">
 					<div class="text-box box">
 						<div class="info">
-							<div class="link-title">
-								<h3 class="anim-text domain">danielurzola.com</h3>
+                            <div class="link-title">
+                                <h3 class="anim-text domain">danielurzola.com</h3>
 							</div>
-							<p class="anim-text typetext">Welcome to <span id="textType"></span></p>
-							<div class="text">
-								<p>
-									Hello! My name is Daniel Urzola, i am a 26 y/o man who lives in 
-                                    Cartagena, Colombia, I'm a Self-Taught React Front End Developer,
-                                    My Journey started 2 years ago in pandemic, in my free time i started
-                                    learning HTML, CSS & Js as a Hobbie but ended up liking it and starded
-                                    doing websites for friends and family.
-									<br /><br/>
-									Last year meanwhile i was working as a call center agent in an US company 
-                                    asisting Uber drivers i was studyng React and making projects at the same 
-                                    time just in order for me to get enough experience and knowledge to get 
-                                    hired as a front-end dev in an outborder compamy  . <br/><br/>
-									I really believe i have enough knowledge in React and other related techs 
-                                    to add value to any dev company i'd be working with.
-								</p>
-								<p>
-									I always do my best to exceed expectations in everything i do, including 
-                                    this dev journey i got myself into, i always try to do the best i can in
-                                    the shortest time possible, i have never liked to do mediocre jobs,
-                                    everything needs to be perfect or i am not confortable with the outcome, i 
-                                    am very meticulous with details.
-									<br/><br/>
-									You can clearly see that in all the projects below i have made, i always 
-                                    make sure everything fits perfecly, the UI and the UX, in top of that it
-                                    needs to look and feel good in every device it's been displayed, that's 
-                                    vital. This portfolio is also made all by myself from scratch 
-                                    because  i wanted to give a great impression <br/><br/>
-									So i really believe that my sense of work, responsability, effectiveness 
-                                    and efficiency could be benefitial to any dev company i'd start working 
-                                    with .
-								</p>
-								<p>
-									In my free time i like to do plenty of activities, i like going for a walk,
-                                    i like spending time with friends and family, i like to spend time with my
-                                    dog taking him for a walk in the beach every weekend.
-									<br/><br/>
-									Involving activities related with excersises i like going to the gym 4 days a week, sometimes also i like to jog in a park near by my house, . <br /><br />
-									Officia doloribus molestias, dolore saepe nobis quisquam eum nihil
-									dolores provident. Quos quas laboriosam necessitatibus similique
-									expedita optio iste deserunt fugit.
-								</p>
+                            <div class="tabs">
+                                <span>About me</span>
+                                <span>Work ethic</span>
+                            </div>
+							<div class="texts">
+								<div class="text">
+                                    <p>
+                                        Hello! My name is Daniel Urzola, i am a 26 y/o man who lives in 
+                                        Cartagena, Colombia, I'm a Self-Taught React Front End Developer,
+                                        My Journey started 2 years ago in pandemic, in my free time i started
+                                        learning HTML, CSS & Js as a Hobbie but ended up liking it and starded
+                                        doing websites for friends and family.
+                                        <br /><br/>
+                                        Last year meanwhile i was working as a call center agent in an US company 
+                                        asisting Uber drivers i was studyng React and making projects at the same 
+                                        time just in order for me to get enough experience and knowledge to get 
+                                        hired as a front-end dev in an outborder compamy  . <br/><br/>
+                                        I really believe i have enough knowledge in React and other related techs 
+                                        to add value to any dev company i'd be working with.
+                                    </p>
+                                    <div id="CV">
+							            <a href="">Download my CV</a>
+						            </div>
+                                </div>
+								<div class="text">
+                                    <p>
+                                        I always do my best to exceed expectations in everything i do, including 
+                                        this dev journey i got myself into, i always try to do the best i can in
+                                        the shortest time possible, i have never liked to do mediocre jobs,
+                                        everything needs to be perfect or i am not confortable with the outcome, i 
+                                        am very meticulous with details.
+                                        <br/><br/>
+                                        You can clearly see that in all the projects below i have made, i always 
+                                        make sure everything fits perfecly, the UI and the UX, in top of that it
+                                        needs to look and feel good in every device it's been displayed, that's 
+                                        vital. This portfolio is also made all by myself from scratch 
+                                        because  i wanted to give a great impression <br/><br/>
+                                        So i really believe that my sense of work, responsability, effectiveness 
+                                        and efficiency could be benefitial to any dev company i'd start working 
+                                        with .
+                                        </p>
+                                        <div id="CV">
+							                <a href="">Download my CV</a>
+						                </div>
+                                </div>
 							</div>
-						</div>
-						<div id="CV">
-							<a href="">Download my CV</a>
-						</div>
-						<div class="tabs">
-							<span>About me</span>
-							<span>Work ethic</span>
-							<span>My Hobbies</span>
 						</div>
 					</div>
 					<div class="tech-box box">
@@ -111,7 +110,7 @@
 			</div>
 
 
-
+             
 
 			<div id="Projects">
 				<div class="title">
@@ -124,9 +123,14 @@
                         </div>
                         <div class="body">
                             <p class="title">Expenses Checker</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="text">This is a React project that allows the user to manage
+                            its budget and expenses in order just to see how much money they have 
+                            spent, how they are spending that money and how much budget the have 
+                            left. </br></br>
+                            It also allows the user to filter their expenses in categories to see 
+                            where is going all that money. In this project i use useState and 
+                            useEffect and hooks.
+                        </p>
                         </div>
                     </div>
                     <div class="box cripto">
@@ -134,11 +138,15 @@
                             <img src="imagenes/Captura de pantalla 2023-01-06 042634.jpg" alt="">
                         </div>
                         <div class="body">
-                            <p class="title">Cripto Converter</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit.
-                            Praesentium distinctio dolore sunt est quae iure esse 
-                            minima assumenda dignissimos perferendis!</p>
+                            <p class="title">Cripto Converter API</p>
+                            <p class="text">This Cripto Converter site allows you to convert 5
+                            different types of currency including the US currency into the 20 most
+                            traded cryptocurrencies right now, so you will know the price, the higest
+                            value of the day and the lowest all this in real time. </br></br>
+                            I made this project in React using an API that is called "CryptoCompare", 
+                            used Async/Await to get this data. useState, useEffect, hooks and also 
+                            customs Hooks were used in this project.
+                            </p>
                         </div>
                     </div>
                     <div class="box vet">
@@ -147,9 +155,12 @@
                         </div>
                         <div class="body">
                             <p class="title">Vet Patients</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="text">This is a React Project designed and developed thinking
+                            in vets, it allow vets to keep track on patients, it's names, name of the 
+                            owner, EMAIL, discharge date and symptom, you can add multiple patients, 
+                            edit the information and delete it </br></br>
+                            For this React project i used useState, useEffect and hooks.
+                            </p>
                         </div>
                     </div>
                     <div class="box recipes">
@@ -157,10 +168,16 @@
                             <img src="imagenes/Captura de pantalla 2023-01-06 043733.jpg" alt="">
                         </div>
                         <div class="body">
-                            <p class="title">Food Recipes</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="title">Food Recipes API</p>
+                            <p class="text">This project is very special for me, it's an app that i 
+                            build where you can choose a category of food you like and through an 
+                            API of food recipes it throws you all the recipes that matches with your 
+                            previews selection, you can view the recepe, the instruccions to make it, 
+                            the ingreidents and the amounts, you can alse save the ones you like the 
+                            most. </br></br>
+                            This project was Build in JavaScipt and Bootstrap and the API is 
+                            in "themealdb.com" and i used fetch to get all this data.
+                            </p>
                         </div>
                     </div>
                     <div class="box imgapi">
@@ -169,9 +186,13 @@
                         </div>
                         <div class="body">
                             <p class="title">Image Finder API</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="text">In this project you can search for whatever image you 
+                            like and see them results, i made this project using the pixabay API so 
+                            all the images are coyright free and you can use them however you like.
+                            </br></br>
+                            This project was all made in JavaScipt, i used fetch to get the data of 
+                            the API.
+                            </p>
                         </div>
                     </div>
                     <div class="box loans">
@@ -180,9 +201,14 @@
                         </div>
                         <div class="body">
                             <p class="title">Loan Page</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="text">This React project is a simulator of how much money you
+                            will be paying back if you take a loan depending on the money you ask and 
+                            payment term.
+                            </br></br>
+                            The less the money you ask the less the interests you will need to pay 
+                            and the longer term you ask more money you will need to pay, you can see 
+                            how much money you will need to pay monthly and how much in total
+                            </p>
                         </div>
                     </div>
                     <div class="box weather">
@@ -191,9 +217,13 @@
                         </div>
                         <div class="body">
                             <p class="title">Weather API</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="text"> This Project allows the user to search how is the
+                            weather in every city they choose in the following countrys that are
+                            available in the next input
+                            </br></br>
+                            This project was made in JavaScipt and i used the openweathermap API,
+                            using fetch to get the data 
+                            </p>
                         </div>
                     </div>
                     <div class="box insurance">
@@ -202,9 +232,16 @@
                         </div>
                         <div class="body">
                             <p class="title">insurance Page</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="text">This is a project that allows the user to select some 
+                            attributes of your car for example where is from, the year of the car and 
+                            if the insurance plan is a basic one or a full one. And then know what is 
+                            gonna be the final price of the insurance depending of the previews 
+                            choises
+                            </br></br>
+                            In this React project i used useState, useEffect, useContext, 
+                            createContext, ans useCallback. If you wanna know how the algorithm works 
+                            in the section "How to use" it will show
+                            </p>
                         </div>
                     </div>
                     <div class="box portfolio">
@@ -213,14 +250,16 @@
                         </div>
                         <div class="body">
                             <p class="title">This Portfolio :)</p>
-                            <p class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Praesentium distinctio dolore sunt est quae iure esse minima assumenda 
-                            dignissimos perferendis!</p>
+                            <p class="text">This portfolio i did it all by myself from scratch using 
+                            JavaScipt and PHP for the form, i think i like the outcome. 
+                            </p>
                         </div>
                     </div>
                 </div>
 			</div>
 
+
+            
 
             <div id="Social">
                 <div class="contenedor">
@@ -242,24 +281,37 @@
             </div>
 
 
+           
+
             <div id="Contacto">
                 <div class="contenedor">
-                    <div class="title">
-                        <p></p>
+                    <div class="svg">
+                        <img src="imagenes/cat-astronaut-animate.svg" alt="gato-astronauta">
                     </div>
-                    <form id="Form">
-                        
-                    </form>
+                    <div class="form-box">
+                        <form id="Form">
+                            <legend>CONTACT ME</legend>
+                            <input type="text" placeholder="NAME">
+                            <input type="email" placeholder="EMAIL">
+                            <textarea name="" placeholder="SUBJECT"></textarea>
+                            <input type="submit" id="submit" value="submit" id="">
+                        </form>
+                    </div>
                 </div>
             </div>
 
+        </main>
             
-		</main>
-            <footer id="Footer">
 
+
+            <footer id="Footer">
+                
             </footer>
 
-		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-		<script type="module" src="script.js"></script>
-	</body>
+            
+       
+        
+    <script type="module" src="script.js"></script>
+    <script type="module" src="mq.js"></script>
+</body>
 </html>

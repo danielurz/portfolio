@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Coda+Caption&family=Comfortaa&family=Lobster&family=Ubuntu:wght@400;700&display=swap");
-@font-face {
-  font-family: "Minecraft";
-  src: url("fonts/MinecraftEvenings.otf");
+::-webkit-scrollbar {
+  width: 0.6em;
 }
+
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, #E04143, #AA3F79);
+  border-radius: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,11 +27,13 @@ ul {
 body {
   background-color: #0E0E0E;
   color: white;
+  overflow-x: hidden;
 }
 
 main {
   margin: auto;
   width: 90%;
+  position: relative;
 }
 
 #Header {
@@ -32,18 +43,21 @@ main {
 #Header .contenedor {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   line-height: 1.5em;
 }
 #Header .contenedor .text-box {
   width: 700px;
 }
-#Header .contenedor .text-box .text {
+#Header .contenedor .text-box .texts {
   padding: 10px 0;
   font-size: 1.1em;
 }
+#Header .contenedor .text-box .texts .text {
+  height: 450px;
+}
 #Header .contenedor .text-box .tabs {
-  margin-top: 30px;
+  margin: 30px 0 20px 0;
 }
 #Header .contenedor .text-box .tabs span {
   display: inline-block;
@@ -54,6 +68,7 @@ main {
   font-weight: bold;
   position: relative;
   font-size: 1.2em;
+  user-select: none;
 }
 #Header .contenedor .text-box .tabs span::before {
   content: "";
@@ -65,16 +80,18 @@ main {
   background: rgba(255, 255, 255, 0.5294117647);
 }
 #Header .contenedor .tech-box {
-  width: 900px;
+  width: 850px;
+  min-width: 850px;
 }
 #Header .contenedor .tech-box .title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 #Header .contenedor .tech-box .techs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: end;
+  position: relative;
 }
 #Header .contenedor .tech-box .techs .logo {
   margin: 10px;
@@ -115,14 +132,10 @@ main {
   line-height: 0.95em;
   outline: none;
 }
-#Header .typetext {
-  font-size: 1.3em;
-  padding: 5px 0;
-  margin-top: 40px;
-}
 #Header .tech-title {
   font-size: 2em;
   font-family: "Lobster";
+  line-height: 1.2em;
 }
 
 #CV a {
@@ -133,7 +146,7 @@ main {
   padding: 5px 20px;
   border: 2px solid #7373e7;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .activo {
@@ -161,11 +174,10 @@ main {
   margin-right: 2px;
 }
 #Projects .contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1600px;
-  margin: auto;
-  gap: 20px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
 }
 #Projects .contenedor .box {
   width: 300px;
@@ -186,6 +198,20 @@ main {
 }
 #Projects .contenedor .box .body {
   padding: 20px;
+}
+#Projects .contenedor .box .body .text {
+  height: 90px;
+  overflow: hidden;
+  position: relative;
+}
+#Projects .contenedor .box .body .text::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 -45px 30px -25px #171717 inset;
 }
 #Projects .contenedor .box .title {
   margin-bottom: 20px !important;
@@ -250,66 +276,195 @@ main {
 }
 
 #Contacto {
-  margin-top: 150px;
-  height: 600px;
-  background: #8A42F2;
-  border-radius: 10px;
+  margin: 150px auto 0 auto;
+  width: 90%;
+  height: 750px;
+  background: #263238;
+  border-radius: 20px;
 }
 #Contacto .contenedor {
   display: flex;
   height: 100%;
 }
-#Contacto .contenedor .title {
+#Contacto .contenedor .svg {
+  width: 50%;
+  height: inherit;
+  display: grid;
+  place-items: center;
+}
+#Contacto .contenedor .svg img {
+  display: block;
+  width: 650px;
+  margin: auto;
+}
+#Contacto .contenedor .form-box {
   width: 50%;
   display: grid;
   place-items: center;
 }
-#Contacto .contenedor .title p {
-  font-family: "Maincraft";
+#Contacto .contenedor .form-box #Form {
+  padding: 40px 20px;
+  border-radius: 10px;
+  width: 500px;
+  background-color: #1F1B30;
+}
+#Contacto .contenedor .form-box #Form legend {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  font-family: "Lobster";
+  letter-spacing: 2px;
+}
+#Contacto .contenedor .form-box #Form input, #Contacto .contenedor .form-box #Form textarea {
+  margin: 20px auto;
+  display: block;
+  width: 90%;
+  padding: 15px;
+  background-color: #504573;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #e8e8e8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#Contacto .contenedor .form-box #Form input::placeholder, #Contacto .contenedor .form-box #Form textarea::placeholder {
+  color: #969696;
+}
+#Contacto .contenedor .form-box #Form input:focus, #Contacto .contenedor .form-box #Form textarea:focus {
+  outline: none;
+}
+#Contacto .contenedor .form-box #Form textarea {
+  height: 150px;
+  min-height: 150px;
+  max-height: 150px;
+  min-width: 90%;
+  max-width: 90%;
+  line-height: 1.2em;
+}
+#Contacto .contenedor .form-box #Form #submit {
+  background-color: #18151a;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 #Footer {
-  height: 150px;
+  height: 200px;
   background-color: #171717;
   margin-top: 150px;
 }
 
 /* ---------- CLASES PARA LOS HOVER ---------- */
 .hover-logo {
-  position: absolute;
-  top: -80%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 400px;
-  background-color: #171717;
-  border-radius: 10px;
-  color: white;
-  padding: 0 20px;
-  z-index: 10 !important;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  background: linear-gradient(90deg, black 60%, black 80%, transparent 100%);
+  z-index: 5;
+  height: 100vh;
   opacity: 0;
   transition: all 0.3s;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
 }
-.hover-logo .img-div {
-  padding: 30px 0;
+.hover-logo .hover-box {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
 }
-.hover-logo .img-div img {
-  width: 100px !important;
+.hover-logo .hover-box .img-div img {
+  width: 100px;
+  margin: 0 auto 20px auto;
+  display: block;
+  transform: translateX(-150px);
+  transition: all 0.3s;
 }
-.hover-logo .body .titlee {
-  font-size: 1.5em;
-  margin-bottom: 15px;
+.hover-logo .hover-box .body {
+  transform: translateX(-150px);
+  transition: all 0.4s;
+}
+.hover-logo .hover-box .body .prem {
+  font-size: 1.2em;
   text-align: center;
 }
-.hover-logo .body .prem {
+.hover-logo .hover-box .body .titlee {
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-align: center;
+}
+.hover-logo .hover-box .body ul {
+  list-style-type: circle;
+  margin: 20px 0 0 60px;
+  font-size: 1.2em;
+}
+.hover-logo .hover-box .body ul li {
+  padding: 2px 0;
+}
+
+.hover-logo-s {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.hover-logo-s .box-logo {
+  position: absolute;
+  background-color: #171717;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 350px;
+  z-index: 21;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 7px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.hover-logo-s .box-logo .img-div {
+  padding: 30px 0 10px 0;
+}
+.hover-logo-s .box-logo .img-div img {
+  width: 120px;
+  display: block;
+  margin: auto;
+}
+.hover-logo-s .box-logo .cerrar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 3em;
+  cursor: pointer;
+}
+.hover-logo-s .box-logo .body .titlee {
+  font-size: 2em;
   text-align: center;
   margin-bottom: 10px;
-  font-weight: bold;
 }
-.hover-logo .body ul {
-  list-style-type: circle;
-  margin-left: 30px;
+.hover-logo-s .box-logo .body .prem {
+  text-align: center;
+  font-size: 1.25em;
+}
+.hover-logo-s .box-logo .body ul {
+  list-style-type: disc;
+  margin: 20px 0 0 40px;
+}
+.hover-logo-s .box-logo .body ul li {
+  font-size: 1.1em;
+  padding: 2px 0;
 }
 
 .hover-project {
@@ -347,6 +502,7 @@ main {
   position: relative;
   padding: 7px 0;
   cursor: pointer;
+  user-select: none;
 }
 .hover-project .tabss span::before {
   content: "";
@@ -358,23 +514,25 @@ main {
   background: rgba(255, 255, 255, 0.5294117647);
 }
 .hover-project .content {
-  padding: 30px 0;
+  margin-top: 30px;
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-  height: 230px;
 }
 .hover-project .content > div {
   transition: transform 0.3s ease;
   min-width: 100%;
-  margin: 0 5px;
-}
-.hover-project .content > div p {
-  user-select: none;
+  width: 100%;
+  line-height: 1.3em;
+  padding: 0 5px;
 }
 .hover-project .links {
   display: flex;
-  justify-content: space-around;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
 }
 .hover-project .links a {
   display: block;
@@ -397,6 +555,114 @@ main {
   transition: all 0.2s;
 }
 .hover-project .links .link:hover {
+  background-color: #db420a;
+}
+
+.click-project {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 20 !important;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.click-project .project-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  padding: 0 30px;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 450px;
+  background-color: #171717;
+  box-shadow: 0 0 5px 7px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.click-project .project-box .cerrar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 3em;
+  cursor: pointer;
+}
+.click-project .project-box .cabezera .titleee {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 60px 0 30px 0;
+  font-size: 1.5em !important;
+}
+.click-project .project-box .tabss {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.click-project .project-box .tabss span {
+  display: inline-block;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5294117647);
+  font-size: 1.2em;
+  position: relative;
+  padding: 7px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.click-project .project-box .tabss span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5294117647);
+}
+.click-project .project-box .content {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.click-project .project-box .content > div {
+  transition: transform 0.3s ease;
+  min-width: 100%;
+  width: 100%;
+  line-height: 1.3em;
+  padding: 0 5px;
+}
+.click-project .project-box .links {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+}
+.click-project .project-box .links a {
+  display: block;
+  color: white;
+  padding: 5px 60px;
+  font-size: 1.5em;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.click-project .project-box .links .git {
+  background-color: #49228C !important;
+  transition: all 0.2s;
+}
+.click-project .project-box .links .git:hover {
+  background-color: #401b81 !important;
+}
+.click-project .project-box .links .link {
+  background-color: #F24100;
+  transition: all 0.2s;
+}
+.click-project .project-box .links .link:hover {
   background-color: #db420a;
 }
 
