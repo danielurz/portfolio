@@ -10,13 +10,11 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		/>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<title>Document</title>
 	</head>
 	<body>
 		<main>
-
-
-
 			<div id="Header">
 				<div class="contenedor">
 					<div class="text-box box">
@@ -66,7 +64,7 @@
                                         with .
                                         </p>
                                         <div id="CV">
-							                <a href="">Download my CV</a>
+							                <a href="https://danielurzola.com/archives/cv.pdf" download>Download my CVV</a>
 						                </div>
                                 </div>
 							</div>
@@ -289,12 +287,13 @@
                         <img src="imagenes/cat-astronaut-animate.svg" alt="gato-astronauta">
                     </div>
                     <div class="form-box">
-                        <form id="Form">
+                        <form id="Form" action="php/enviar.php" method="post">
                             <legend>CONTACT ME</legend>
-                            <input type="text" placeholder="NAME">
-                            <input type="email" placeholder="EMAIL">
-                            <textarea name="" placeholder="SUBJECT"></textarea>
-                            <input type="submit" id="submit" value="submit" id="">
+                            <input type="text" placeholder="NAME" name="name">
+                            <input type="email" placeholder="EMAIL" name="email">
+                            <textarea placeholder="SUBJECT" name="asunto"></textarea>
+                            <div class="g-recaptcha" data-sitekey="6Lcb3BQkAAAAAL8LgoOzxR-xv6CR41VHaGwREc4d"></div>
+                            <input type="submit" id="submit" value="aceptar" id="btnenviar" name="btnenviar">
                         </form>
                     </div>
                 </div>
@@ -310,8 +309,6 @@
 
             
        
-        
-    <script type="module" src="script.js"></script>
-    <script type="module" src="mq.js"></script>
+<script type="module" src="/scripts/script.js"></script>
 </body>
 </html>

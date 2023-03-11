@@ -666,6 +666,11 @@ main {
   background-color: #db420a;
 }
 
+.g-recaptcha {
+  margin: auto;
+  width: 304px;
+}
+
 /* --------------- TECH COLORS --------------- */
 .html {
   background-color: #ff6625 !important;

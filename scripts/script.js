@@ -140,7 +140,7 @@ function logoEvent() {
         })
     } else {
         logos.forEach(logo => {
-            logo.addEventListener('click',() =>clickLogoS(logo))
+            logo.addEventListener('click',() => clickLogoS(logo))
         })
     }
 }
@@ -154,10 +154,10 @@ window.addEventListener("resize", function() {
     logos.forEach(logo => {
         logo.addEventListener('mouseenter',hoverLogoXL)
     })
-} else if(window.innerWidth <= 1024 && previousWidth > 1024) {
+} else if (window.innerWidth <= 1024 && previousWidth > 1024) {
     logos.forEach(logo => {
         logo.removeEventListener('mouseenter',hoverLogoXL)
-        logo.addEventListener('click',() =>clickLogoS(logo))
+        logo.addEventListener('click',() => clickLogoS(logo))
     })
   }
   previousWidth = window.innerWidth;
