@@ -1,21 +1,3 @@
-@media (max-width:1600px) {
-    #Header {
-        .tech-box {
-            width: 750px !important;
-            min-width: 750px !important;
-            .logo {
-                width: 180px !important;
-                img {
-                    width: 50px !important;
-                    min-width: 50px !important;
-                }
-            }
-        }
-    }
-}
-
-
-
 @media (max-width:1400px) {
     #Contacto {
         .contenedor {
@@ -28,20 +10,6 @@
                 #Form {
                     margin: auto;
                     width: 80%;
-                }
-            }
-        }
-    }
-    #Header {
-        .tech-box {
-            width: 600px !important;
-            min-width: 600px !important;
-            .logo {
-                width: 130px !important;
-                height: 110px !important; 
-                img {
-                    width: 50px !important;
-                    min-width: 50px !important;
                 }
             }
         }
@@ -61,20 +29,6 @@
                 #Form {
                     margin: auto;
                     width: 80%;
-                }
-            }
-        }
-    }
-    #Header {
-        .tech-box {
-            width: 450px !important;
-            min-width: 450px !important;
-            .logo {
-                width: 90px !important;
-                height: 90px !important; 
-                img {
-                    width: 40px !important;
-                    min-width: 40px !important;
                 }
             }
         }
@@ -134,22 +88,8 @@
                         height: auto;
                     }
                 }
-            }
-            .tech-box {
-                margin-top: 80px;
-                .techs {
-                    justify-content: center;
-                    .logo {
-                        width: 25% !important;
-                        cursor: pointer;
-                        &:hover {
-                            transform: translate(0);
-                        } 
-                        img {
-                            width: 60px !important;
-                            min-width: 60px !important;
-                        }
-                    }
+                .tabs {
+                    text-align: center;
                 }
             }
         }
@@ -198,6 +138,13 @@
             }
         }
     }
+    #Certifications {
+        .contenedor {
+            .box {
+                margin: auto;
+            }
+        }
+    }
 }
 
 
@@ -206,16 +153,6 @@
         .contenedor {
             .domain {
                 font-size: 2.5em !important;
-            }
-            .tech-box {
-                margin-top: 80px;
-                .techs {
-                    // justify-content: flex-start;
-                    .logo {
-                        width: 100% !important;
-                        margin: 15px 0;
-                    }
-                }
             }
         }
     }
