@@ -25,12 +25,10 @@ export const logos = [
         clase: "sass",
         src: "imagenes/file_type_sass_icon_130182.svg",
         list: `
-            <li>Sass</li>
-            <li>Pseudo-classes</li>
-            <li>Gradients and shadows</li>
-            <li>Flexbox and Grid</li>
-            <li>2D and 3D animations</li>
-            <li>Media Queries</li>
+            <li>Mixings</li>
+            <li>Variables</li>
+            <li>Functions</li>
+            <li>Partials</li>
         `
     },
     {
@@ -97,6 +95,7 @@ export const logos = [
             <li>Node.js</li>
             <li>Express</li>
             <li>JWT</li>
+            <li>REST API</li>
             <li>BCrypt</li>
             <li>npm, pnpm, yarn</li>
         `
@@ -138,9 +137,9 @@ export const logos = [
         clase: "graphql",
         src: "imagenes/file_type_graphql_icon_130564.svg",
         list: `
-            <li>SQL</li>
-            <li>Prisma</li>
-            <li>Sequelize</li>
+            <li>Queries</li>
+            <li>Mutations</li>
+            <li>Subscriptions</li>
             <li>CRUD</li>
             <li>Aggregations</li>
         `

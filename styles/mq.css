@@ -8,6 +8,9 @@
   }
 }
 @media (max-width: 1200px) {
+  #Header .contenedor .text-box .texts .text {
+    height: 480px;
+  }
   #Contacto .contenedor .svg img {
     width: 450px;
   }
@@ -45,9 +48,6 @@
   #Contacto .contenedor .form-box #Form {
     width: 100%;
   }
-  #Header {
-    padding: 150px 0 50px 0;
-  }
   #Header .contenedor {
     flex-wrap: wrap;
   }
@@ -57,6 +57,20 @@
   #Header .contenedor .box {
     width: 100% !important;
     min-width: 100% !important;
+  }
+  #Header .contenedor .text-box .tabs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+  }
+  #Header .contenedor .text-box .tabs::-webkit-scrollbar {
+    display: none;
+  }
+  #Header .contenedor .text-box .tabs > * {
+    flex-shrink: 0;
   }
   #Header .contenedor .text-box .texts {
     padding: 10px 0;
@@ -136,6 +150,9 @@
     width: 90% !important;
     padding: 0 15px;
   }
+  #Header .text-box .tabs {
+    justify-content: start !important;
+  }
   #Header .contenedor .domain {
     font-size: 2em !important;
   }
@@ -148,7 +165,7 @@
     padding: 5px 50px;
   }
   #Header .contenedor .domain {
-    font-size: 1.8em !important;
+    font-size: 1.6em !important;
   }
   #Header .contenedor .tech-box {
     margin-top: 80px;

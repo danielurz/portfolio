@@ -1,19 +1,61 @@
 import { logos } from "./scripts/logos.js";
 import { FEprojects } from "./scripts/projects.js"
+import { FSprojects } from "./scripts/projects.js"
 import { introduction } from "./scripts/introduction.js";
+import { formToast, debounce,loaderFn } from "./helpers/functions.js";
+
+const form = document.querySelector("#Form")
+
+
+form.addEventListener("submit", e => {
+    e.preventDefault()
+    
+    const loader = loaderFn()
+    const formData = new FormData(e.currentTarget)
+
+    const name = formData.get("name")
+    const email = formData.get("email")
+    const tel = formData.get("tel")
+    const subject = formData.get("subject")
+    const recaptchaResponse = formData.get("g-recaptcha-response")
+
+    if ([name,email,subject].includes("")) {
+        loader.remove()
+        return formToast({error: "Fill the required fields"})
+    }
+
+
+    if (grecaptcha.getResponse() === '') {
+        loader.remove()
+        return formToast({error: "Please fill out the reCAPTCHA"});
+    }
+
+    const endpointUrl = "https://uptask-backend-66z9.onrender.com/api/user/envio-mail-portfolio"
+
+    fetch(endpointUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({name,email,tel,subject,'g-recaptcha-response': recaptchaResponse})
+    }).then(data => data.json())
+    .then(res => {
+        if (res?.success) {
+            formToast(res)
+            form.reset()
+        } else if (res?.error) {
+            formToast(res)
+        }
+        loader.remove()
+    }).catch(err => {
+        loader.remove()
+        formToast({error: err.message})
+    })
+});
+
 
 // Add the debounce function at the top of your script
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-};
+
 
 // ... rest of your code ...
 
@@ -22,7 +64,6 @@ function debounce(func, wait) {
 (function(){
     const tabDiv = document.querySelector("#Header .tabs")
     const textDiv = document.querySelector("#Header .texts")
-    const CVsrc = "/archives/cv.pdf"
 
     introduction.forEach(({title,text}) => {
         const span = document.createElement("span")
@@ -34,9 +75,6 @@ function debounce(func, wait) {
         span.textContent = title
         div.innerHTML = `
             <p>${text}</p>
-            <div id="CV">
-                <a href="${CVsrc}" target="_blank">Download my CV</a>
-            </div>
         `
 
         tabDiv.append(span)
@@ -73,15 +111,16 @@ introduction.forEach((_,index) => {
 // --------- Cargar proyectos ----------
 
 (function(){
-    const projectDiv = document.querySelector("#Projects .frontend .contenedor")
+    const FEprojectDiv = document.querySelector("#Projects .frontend .contenedor")
+    const FSprojectDiv = document.querySelector("#Projects .fullstack .contenedor")
 
-    FEprojects.forEach(obj => {
-        const {boxClass,thumb,title,text} = obj
+    FEprojects.forEach(FEproject => {
+        const {boxClass,thumb,title,text} = FEproject
 
         const project = document.createElement("div")
 
         project.classList.add("box")
-        project.classList.add(`${boxClass}`)
+        project.classList.add(boxClass)
 
         project.innerHTML = `
         <div class="header">
@@ -93,7 +132,28 @@ introduction.forEach((_,index) => {
         </div>
         `
 
-        projectDiv.append(project)
+        FEprojectDiv.append(project)
+    })
+
+    FSprojects.forEach(FSproject => {
+        const {boxClass,thumb,title,text} = FSproject
+
+        const project = document.createElement("div")
+
+        project.classList.add("box")
+        project.classList.add(boxClass)
+
+        project.innerHTML = `
+        <div class="header">
+            <img src="${thumb}" alt="${title}">
+        </div>
+        <div class="body">
+            <p class="title">${title}</p>
+            <p class="text">${text}</p>
+        </div>
+        `
+        
+        FSprojectDiv.append(project)
     })
 
 }());
@@ -301,11 +361,23 @@ const clickLogoS = index => {
 
 
 
-const projects = Array.from(document.querySelectorAll("#Projects .frontend .box"))
+const FEprojectsDiv = Array.from(document.querySelectorAll("#Projects .frontend .box"))
+const FSprojectsDiv = Array.from(document.querySelectorAll("#Projects .fullstack .box"))
 
 
-const hoverProjectL = index => {
-    const {title,text,instructions,link,git} = FEprojects[index]
+const hoverProjectL = (index,e) => {
+
+    const [projectType] = e.currentTarget.parentNode.parentNode.classList
+
+    const projects = {
+        frontend: [FEprojects,FEprojectsDiv],
+        fullstack: [FSprojects,FSprojectsDiv]
+    }
+
+    const objProject = projects[projectType][0]
+    const divProject = projects[projectType][1]
+
+    const {boxClass,title,text,instructions,link,git} = objProject[index]
 
     const element = document.createElement('div')
 
@@ -336,6 +408,18 @@ const hoverProjectL = index => {
         </a>
     </div>
     `
+
+    if (boxClass === "portfolio") {
+        const links = element.querySelectorAll(".links a")
+        links.forEach(link => {
+            link.addEventListener("click", e => e.preventDefault())
+        })
+    }
+
+    if (boxClass === "propitch") {
+        const link = element.querySelectorAll(".links a")[0]
+        link.addEventListener("click", e => e.preventDefault())
+    }
         
     const tabs = element.querySelectorAll('.tabss span')
     const content = element.querySelectorAll('.content div')
@@ -357,7 +441,7 @@ const hoverProjectL = index => {
     }        
     
     let timeout = setTimeout(() => {
-        projects[index].append(element)
+        divProject[index].append(element)
         setTimeout(() => {
             element.style.opacity = "1"  
             element.style.width = "400px"  
@@ -365,7 +449,7 @@ const hoverProjectL = index => {
         }, 500);
     }, 300);
     
-    projects[index].addEventListener('mouseleave',() => {
+    divProject[index].addEventListener('mouseleave',() => {
         element.remove()
         clearTimeout(timeout)
     })
@@ -373,12 +457,21 @@ const hoverProjectL = index => {
 
 
 
+
 // Funcion el efecto click para los proyectos en tamaño S
 
 
 
-const clickProjectS = index => {
-    const {title,text,instructions,link,git} = FEprojects[index]
+const clickProjectS = (index,e) => {
+
+    const [projectType] = e.currentTarget.parentNode.parentNode.classList
+
+    const projects = {
+        frontend: FEprojects,
+        fullstack: FSprojects
+    }
+
+    const {boxClass,title,text,instructions,link,git} = projects[projectType][index]
     
     const element = document.createElement("div")
 
@@ -399,7 +492,7 @@ const clickProjectS = index => {
                 <p>${text}</p>
             </div>
             <div class="inst">
-                ${instructions}
+                <p>${instructions}</p>
             </div>
         </div>
         <div class="links">
@@ -412,6 +505,18 @@ const clickProjectS = index => {
         </div>
     </div>
     `
+
+    if (boxClass === "portfolio") {
+        const links = element.querySelectorAll(".links a")
+        links.forEach(link => {
+            link.addEventListener("click", e => e.preventDefault())
+        })
+    }
+
+    if (boxClass === "propitch") {
+        const link = element.querySelectorAll(".links a")[0]
+        link.addEventListener("click", e => e.preventDefault())
+    }
         
     const tabs = element.querySelectorAll('.tabss span')
     const content = element.querySelectorAll('.content div')
@@ -462,11 +567,9 @@ const clickProjectS = index => {
 // Manejador de eventos
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-    const handlerProjectXL = projects.map((_,index) => () => hoverProjectL(index))
-    const handlerProjectS = projects.map((_,index) => () => clickProjectS(index))
+    const handlerProjectXL = FEprojectsDiv.map((_,index) => e => hoverProjectL(index,e))
+    const handlerProjectS = FEprojectsDiv.map((_,index) => e => clickProjectS(index,e))
     
     const handlerLogoXL = e => hoverLogoXL(e)
     const handlerLogoS = logos.map((_,index) => () => clickLogoS(index))
@@ -493,7 +596,19 @@ document.addEventListener("DOMContentLoaded", () => {
             caveat.textContent = "Click on me!!!"
         }
 
-        projects.forEach((project,index) => {
+        FEprojectsDiv.forEach((project,index) => {
+            project.removeEventListener("mouseenter", handlerProjectXL[index])
+            project.removeEventListener("click", handlerProjectS[index])
+            
+            if (window.innerWidth > 1024) {
+                project.addEventListener("mouseenter", handlerProjectXL[index])
+            } else {
+                project.addEventListener("click", handlerProjectS[index])
+            }
+        })
+
+
+        FSprojectsDiv.forEach((project,index) => {
             project.removeEventListener("mouseenter", handlerProjectXL[index])
             project.removeEventListener("click", handlerProjectS[index])
             

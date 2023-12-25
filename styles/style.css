@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Coda+Caption:wght@800&family=Comfortaa&family=Lobster&family=Ubuntu:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 ::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -20,10 +21,6 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-ul {
-  list-style-type: none;
-}
-
 body {
   background-color: #0E0E0E;
   color: white;
@@ -31,7 +28,7 @@ body {
 }
 
 main {
-  margin: auto;
+  margin: 150px auto;
   width: 90%;
   position: relative;
 }
@@ -44,7 +41,6 @@ main {
 
 #Header {
   font-size: 18px;
-  padding: 150px 0 50px 0;
 }
 #Header .contenedor {
   display: flex;
@@ -63,6 +59,9 @@ main {
 #Header .contenedor .text-box .texts .text {
   height: 400px;
   display: none;
+}
+#Header .contenedor .text-box .texts .text .list {
+  margin-left: 50px;
 }
 #Header .contenedor .text-box .tabs {
   margin: 30px 0 20px 0;
@@ -132,7 +131,7 @@ main {
   left: 0;
   right: 0;
   pointer-events: none;
-  box-shadow: inset 20px 0 15px #0E0E0E, inset -20px 0 15px #0E0E0E;
+  box-shadow: inset 20px 0px 15px #0E0E0E, inset -20px 0px 15px #0E0E0E;
   z-index: 2;
 }
 #Logos .logo-cont {
@@ -149,7 +148,7 @@ main {
   flex-shrink: 0;
 }
 #Logos .logo-cont .logo img {
-  width: 80px;
+  width: 85px;
   transition: transform 0.3s;
 }
 #Logos .logo-cont .logo img:hover {
@@ -273,8 +272,8 @@ main {
   transform: translateY(-3px);
 }
 
-#Projects {
-  margin-top: 50px;
+#Projects > * {
+  margin-top: 100px;
 }
 #Projects .title {
   margin-bottom: 50px;
@@ -426,14 +425,13 @@ main {
   margin: 20px auto;
   display: block;
   width: 90%;
-  padding: 15px;
+  padding: 12px;
   background-color: #504573;
   border: none;
   border-radius: 10px;
   font-size: 1em;
   font-weight: bold;
   color: #e8e8e8;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 #Contacto .contenedor .form-box #Form input::placeholder, #Contacto .contenedor .form-box #Form textarea::placeholder {
@@ -443,11 +441,8 @@ main {
   outline: none;
 }
 #Contacto .contenedor .form-box #Form textarea {
-  height: 150px;
-  min-height: 150px;
-  max-height: 150px;
-  min-width: 90%;
-  max-width: 90%;
+  height: 100px;
+  resize: none;
   line-height: 1.2em;
 }
 #Contacto .contenedor .form-box #Form #submit {
@@ -456,12 +451,6 @@ main {
   cursor: pointer;
   font-weight: bold;
   font-size: 1.1em;
-}
-
-#Footer {
-  height: 100px;
-  background-color: #0E0E0E;
-  margin-top: 150px;
 }
 
 /* ---------- CLASES PARA LOS HOVER ---------- */
@@ -775,4 +764,194 @@ main {
 .g-recaptcha {
   margin: auto;
   width: 304px;
+}
+
+/* Google Font Import - Poppins */
+.toast {
+  position: fixed;
+  z-index: 9999;
+  top: 25px;
+  right: 30px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid var(--toast-color);
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.activeToast {
+  transform: translateX(0%) !important;
+}
+
+.toast .toast-content {
+  display: flex;
+  align-items: center;
+}
+
+.toast-content .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  background-color: var(--toast-color);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.toast-content .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.message .text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.message .text.text-1 {
+  font-weight: 600;
+  color: #333;
+}
+
+.toast .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.toast .close:hover {
+  opacity: 1;
+}
+
+.toast .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #ddd;
+}
+
+.toast .progress:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--toast-color);
+}
+
+.progress.active:before {
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
+}
+.toast.active ~ button {
+  pointer-events: none;
+}
+
+.loader {
+  z-index: 9999;
+  position: fixed;
+  top: 25px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.loader div {
+  width: 8%;
+  height: 24%;
+  background: rgb(128, 128, 128);
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  opacity: 0;
+  border-radius: 50px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  animation: fade458 1s linear infinite;
+}
+
+@keyframes fade458 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+.loader .bar1 {
+  transform: rotate(0deg) translate(0, -130%);
+  animation-delay: 0s;
+}
+
+.loader .bar2 {
+  transform: rotate(30deg) translate(0, -130%);
+  animation-delay: -1.1s;
+}
+
+.loader .bar3 {
+  transform: rotate(60deg) translate(0, -130%);
+  animation-delay: -1s;
+}
+
+.loader .bar4 {
+  transform: rotate(90deg) translate(0, -130%);
+  animation-delay: -0.9s;
+}
+
+.loader .bar5 {
+  transform: rotate(120deg) translate(0, -130%);
+  animation-delay: -0.8s;
+}
+
+.loader .bar6 {
+  transform: rotate(150deg) translate(0, -130%);
+  animation-delay: -0.7s;
+}
+
+.loader .bar7 {
+  transform: rotate(180deg) translate(0, -130%);
+  animation-delay: -0.6s;
+}
+
+.loader .bar8 {
+  transform: rotate(210deg) translate(0, -130%);
+  animation-delay: -0.5s;
+}
+
+.loader .bar9 {
+  transform: rotate(240deg) translate(0, -130%);
+  animation-delay: -0.4s;
+}
+
+.loader .bar10 {
+  transform: rotate(270deg) translate(0, -130%);
+  animation-delay: -0.3s;
+}
+
+.loader .bar11 {
+  transform: rotate(300deg) translate(0, -130%);
+  animation-delay: -0.2s;
+}
+
+.loader .bar12 {
+  transform: rotate(330deg) translate(0, -130%);
+  animation-delay: -0.1s;
 }/*# sourceMappingURL=style.css.map */
