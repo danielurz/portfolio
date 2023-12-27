@@ -129,7 +129,7 @@ export const FEprojects = [
         JavaScipt and nodemailer for the form, i think i like the outcome. `,
         instructions: `Nothing to see here`,
         link: "",
-        git: ""
+        git: "https://github.com/danielurz/portfolio/"
     },
 ]
 

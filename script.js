@@ -38,7 +38,8 @@ form.addEventListener("submit", e => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({name,email,tel,subject,'g-recaptcha-response': recaptchaResponse})
-    }).then(data => data.json())
+    })
+    .then(data => data.json())
     .then(res => {
         if (res?.success) {
             formToast(res)
@@ -409,14 +410,7 @@ const hoverProjectL = (index,e) => {
     </div>
     `
 
-    if (boxClass === "portfolio") {
-        const links = element.querySelectorAll(".links a")
-        links.forEach(link => {
-            link.addEventListener("click", e => e.preventDefault())
-        })
-    }
-
-    if (boxClass === "propitch") {
+    if (boxClass === "portfolio" || boxClass === "propitch") {
         const link = element.querySelectorAll(".links a")[0]
         link.addEventListener("click", e => e.preventDefault())
     }
@@ -506,14 +500,7 @@ const clickProjectS = (index,e) => {
     </div>
     `
 
-    if (boxClass === "portfolio") {
-        const links = element.querySelectorAll(".links a")
-        links.forEach(link => {
-            link.addEventListener("click", e => e.preventDefault())
-        })
-    }
-
-    if (boxClass === "propitch") {
+    if (boxClass === "portfolio" || boxClass === "propitch") {
         const link = element.querySelectorAll(".links a")[0]
         link.addEventListener("click", e => e.preventDefault())
     }
